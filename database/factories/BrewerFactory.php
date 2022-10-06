@@ -17,7 +17,8 @@ class BrewerFactory extends Factory
     public function definition()
     {
         return [
-
+            'name' => fake()->userName,
+            'category' => fake()->randomElement(['espresso', 'pour over', 'immersion'])
         ];
     }
 }

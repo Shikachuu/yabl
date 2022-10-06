@@ -8,7 +8,6 @@
 </head>
 <body class="antialiased">
 @yield('content', 'Default content')
-<x-layout.footer></x-layout.footer>
 @livewireScripts
 </body>
 </html>

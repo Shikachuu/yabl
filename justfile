@@ -11,4 +11,7 @@ run:
     docker run --rm -it -p 8000:8000 --env-file .env -v $PWD:/app ghcr.io/shikachuu/yabl:latest
 
 migrate:
-    docker run --rm -it --env-file .env ghcr.io/shikachuu/yabl:latest php artisan migrate
+    docker run --rm -it --env-file .env -v $PWD:/app ghcr.io/shikachuu/yabl:latest php artisan migrate
+
+seed:
+    docker run --rm -it --env-file .env -v $PWD:/app ghcr.io/shikachuu/yabl:latest php artisan db:seed

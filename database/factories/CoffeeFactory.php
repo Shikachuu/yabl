@@ -17,7 +17,14 @@ class CoffeeFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'name' => fake()->streetName,
+            'roaster' => fake()->colorName . " " . fake()->firstNameFemale() . " Roastery",
+            'country' => fake()->country(),
+            'species' => fake()->randomElement(['robusta', 'arabica']),
+            'roast_level' => fake()->randomElement(['light-presso', 'light-filter', 'medium', 'dark']),
+            'roast_date' => fake()->date(),
+            'altitude' => fake()->randomDigitNotNull(),
+            'tasting_notes' => json_encode(fake()->randomElements(fake()->words(), 2)),
         ];
     }
 }

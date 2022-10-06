@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('brewers', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->enum('category', ['espresso', 'pour over', 'immersion']);
+            $table->string('name')->fulltext();
+            $table->enum('category', ['espresso', 'pour over', 'immersion'])->index();
             $table->timestamps();
         });
     }

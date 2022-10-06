@@ -14,13 +14,13 @@ return new class extends Migration {
     {
         Schema::create('coffees', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('roaster');
-            $table->string('country');
-            $table->string('species');
-            $table->string('altitude');
-            $table->enum('roast_level', ['light-presso', 'light-filter', 'medium', 'dark']);
+            $table->string('name')->fulltext();
+            $table->string('roaster')->fulltext();
+            $table->string('country')->fulltext();
             $table->enum('species', ['robusta', 'arabica']);
+            $table->string('altitude')->nullable();
+            $table->enum('roast_level', ['light-presso', 'light-filter', 'medium', 'dark']);
+            $table->date('roast_date');
             $table->json('tasting_notes');
             $table->timestamps();
         });
