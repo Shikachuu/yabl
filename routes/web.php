@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\BrewController;
+use App\Http\Controllers\CoffeeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +15,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [BrewController::class, 'index']);
+
+Route::get('/coffee', [CoffeeController::class, 'index'])->name('coffees');
+Route::get('/coffee/{id}')->name('coffee');
+Route::get('/brew', [BrewController::class, 'index'])->name('brews');
+Route::get('/brew/{id}', [BrewController::class, 'show'])->name('brew');
+Route::get('/brewer')->name('brewers');
+Route::get('/about')->name('about');

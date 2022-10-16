@@ -53,17 +53,17 @@ return [
     'channels' => [
         'stack' => [
             'driver' => 'stack',
-            'channels' => ['stdout'],
+            'channels' => ['stderr'],
             'ignore_exceptions' => false,
         ],
 
-        'stdout' => [
+        'stderr' => [
             'driver' => 'monolog',
             'level' => env('LOG_LEVEL', 'debug'),
             'handler' => StreamHandler::class,
-            'formatter' => Monolog\Formatter\LogstashFormatter::class,
+            'formatter' => \Monolog\Formatter\GoogleCloudLoggingFormatter::class,
             'with' => [
-                'stream' => 'php://stdout',
+                'stream' => 'php://stderr',
             ],
         ],
 

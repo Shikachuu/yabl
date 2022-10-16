@@ -6,8 +6,9 @@
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <title>{{ env('APP_NAME') }}</title>
 </head>
-<body class="antialiased">
-@yield('content', 'Default content')
+<body class="antialiased bg-orange-200">
+<main class="w-full mx-auto container flex">{{ $slot }}</main>
+<x-footer />
 @livewireScripts
 </body>
 </html>

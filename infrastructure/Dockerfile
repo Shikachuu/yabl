@@ -18,6 +18,6 @@ COPY --from=dependencyInstall /app /app
 COPY --from=roadrunner /usr/bin/rr /usr/local/bin/rr
 WORKDIR /app
 RUN apk add --no-cache ca-certificates && docker-php-ext-install pdo_mysql sockets
-CMD ["php", "artisan", "octane:start", "--host=0.0.0.0"]
+CMD ["php", "artisan", "octane:start", "--host=0.0.0.0", "--no-ansi"]
 
 EXPOSE 8000
