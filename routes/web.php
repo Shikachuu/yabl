@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BrewController;
 use App\Http\Controllers\CoffeeController;
+use App\Http\Controllers\GeneralController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [BrewController::class, 'index']);
+Route::get('/', [GeneralController::class, 'index']);
 
 Route::get('/coffee', [CoffeeController::class, 'index'])->name('coffees');
 Route::get('/coffee/{id}')->name('coffee');

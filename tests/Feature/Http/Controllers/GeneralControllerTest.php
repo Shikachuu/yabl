@@ -8,15 +8,9 @@ use Tests\TestCase;
 
 class GeneralControllerTest extends TestCase
 {
-    /**
-     * A basic feature test example.
-     *
-     * @return void
-     */
-    public function test_example()
+    public function test_index_redirect()
     {
         $response = $this->get('/');
-
-        $response->assertStatus(200);
+        $response->assertRedirect('/brew');
     }
 }

@@ -3,6 +3,7 @@ export PATH := "./node_modules/.bin:" + env_var('PATH')
 
 alias b := build
 alias r := run
+alias t := test
 
 @build:
     DOCKER_BUILDKIT=1 docker build -t ghcr.io/shikachuu/yabl:latest -f infrastructure/Dockerfile .
@@ -15,3 +16,6 @@ alias r := run
 
 @seed:
     docker run --rm -it --env-file .env -v $PWD:/app ghcr.io/shikachuu/yabl:latest php artisan db:seed
+
+@test:
+    docker run --rm -it --env-file .env -v $PWD:/app ghcr.io/shikachuu/yabl:latest php artisan test
