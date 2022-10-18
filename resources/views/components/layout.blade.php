@@ -6,8 +6,13 @@
     <title>{{ env('APP_NAME') }}</title>
 </head>
 <body class="antialiased bg-orange-200">
-<main class="w-full mx-auto container flex">{{ $slot }}</main>
-<x-footer />
+<main class="w-full mx-auto container flex">
+    <section class="container px-6 py-10 mx-auto">
+        <h1 class="text-3xl font-semibold text-gray-800 capitalize lg:text-4xl">{{ $title }}</h1>
+        {{ $slot }}
+    </section>
+</main>
+<x-footer/>
 @livewireScripts
 <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </body>

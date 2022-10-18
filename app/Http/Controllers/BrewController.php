@@ -24,7 +24,7 @@ class BrewController extends Controller
             ->join('coffees', 'coffee_id', '=', 'coffees.id')
             ->orderBy('created_at', 'desc')
             ->simplePaginate(6);
-        return ResponseFacade::view('index', ['brews' => $brews]);
+        return ResponseFacade::view('index', ['title' => '', 'brews' => $brews]);
     }
 
     public function show(int $id): Response
