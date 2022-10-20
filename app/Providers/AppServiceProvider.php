@@ -30,5 +30,12 @@ class AppServiceProvider extends ServiceProvider
                 return empty($string) === false ? $this->whereFullText($field, $string) : $this;
             }
         );
+
+        Builder::macro(
+            'exactFilter',
+            function (string $field, mixed $value) {
+                return empty($value) === false ? $this->where($field, '=', $value) : $this;
+            }
+        );
     }
 }
