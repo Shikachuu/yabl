@@ -6,8 +6,8 @@
         </a>
         <ul class="flex flex-wrap items-center mb-6 sm:mb-0">
             <li>
-                <a href="{{ route('about') }}" class="mr-4 text-sm text-black hover:underline md:mr-6">
-                    About
+                <a href="{{ route('brews') }}" class="mr-4 text-sm text-black hover:underline md:mr-6">
+                    Brews
                 </a>
             </li>
             <li>
@@ -21,8 +21,8 @@
                 </a>
             </li>
             <li>
-                <a href="{{ route('brews') }}" class="text-sm text-black hover:underline">
-                    Brews
+                <a href="{{ route('about') }}" class="mr-4 text-sm text-black hover:underline md:mr-6">
+                    About
                 </a>
             </li>
         </ul>
