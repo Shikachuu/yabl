@@ -1,7 +1,6 @@
 <?php
 
 use App\Http\Controllers\BrewController;
-use App\Http\Controllers\CoffeeController;
 use App\Http\Controllers\GeneralController;
 use App\Http\Livewire\Coffees;
 use Illuminate\Support\Facades\Route;

@@ -18,7 +18,7 @@ class CoffeeFactory extends Factory
     {
         return [
             'name' => fake()->streetName,
-            'roaster' => fake()->colorName . " " . fake()->firstNameFemale() . " Roastery",
+            'roaster' => fake()->colorName.' '.fake()->firstNameFemale().' Roastery',
             'country' => fake()->country(),
             'species' => fake()->randomElement(['robusta', 'arabica']),
             'roast_level' => fake()->randomElement(['light-presso', 'light-filter', 'medium', 'dark']),

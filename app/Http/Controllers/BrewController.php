@@ -3,8 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Brew;
-use Illuminate\Http\Request;
-use Illuminate\Log\Logger;
 use Illuminate\Support\Facades\Response as ResponseFacade;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -18,12 +16,13 @@ class BrewController extends Controller
                 'coffees.name as coffee',
                 'brewers.name as brewer',
                 'grinder',
-                'brews.created_at'
+                'brews.created_at',
             ])
             ->join('brewers', 'brewer_id', '=', 'brewers.id')
             ->join('coffees', 'coffee_id', '=', 'coffees.id')
             ->orderBy('created_at', 'desc')
             ->simplePaginate(6);
+
         return ResponseFacade::view('index', ['title' => '', 'brews' => $brews]);
     }
 

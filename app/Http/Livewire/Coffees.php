@@ -16,8 +16,9 @@ class Coffees extends Component
 
     protected $queryString = [
         'roaster' => ['except' => ''],
-        'country' => ['except' => '']
+        'country' => ['except' => ''],
     ];
+
     public function render()
     {
         $coffeesQuery = Coffee::query()
@@ -28,6 +29,7 @@ class Coffees extends Component
         $coffeesQuery->search('country', $this->country);
 
         $coffees = $coffeesQuery->simplePaginate(12);
+
         return view('livewire.coffees', ['coffees' => $coffees])
             ->layout('components.layout', ['title' => 'Coffees']);
     }
