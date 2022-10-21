@@ -18,7 +18,7 @@
             <div onclick="window.location.assign(`{{ route('brew', ['id' => $brew->id]) }}`)"
                  class="cursor-pointer lg:flex border-solid border-2 bg-gray-200">
                 <img class="object-cover w-full h-56 lg:w-64"
-                     src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1484&q=80"
+                     src="https://images.unsplash.com/photo-1573518378653-55e125da29e5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80"
                      alt="">
 
                 <div class="flex flex-col justify-between py-6 lg:mx-6">

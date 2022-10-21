@@ -54,6 +54,6 @@ class Brews extends Component
         $brews = $brewsQuery->simplePaginate(12);
 
         return view('livewire.brews', ['brews' => $brews, 'brewers' => $brewers, 'roasters' => $roasters])
-            ->layout('components.layout', ['title' => 'Coffees']);
+            ->layout('components.layout', ['title' => 'Brews']);
     }
 }
