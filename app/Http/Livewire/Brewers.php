@@ -8,7 +8,6 @@ use Livewire\WithPagination;
 
 class Brewers extends Component
 {
-
     use WithPagination;
 
     public string $category = '';

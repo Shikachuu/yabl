@@ -21,4 +21,10 @@ alias l := lint
     docker run --rm -it --env-file .env -v $PWD:/app ghcr.io/shikachuu/yabl:latest php artisan test
 
 @lint:
+    just ide
     docker run --rm -it --env-file .env -v $PWD:/app ghcr.io/shikachuu/yabl:latest php vendor/bin/pint
+
+@ide:
+    docker run --rm -it --env-file .env -v $PWD:/app ghcr.io/shikachuu/yabl:latest php artisan ide-helper:meta -q
+    docker run --rm -it --env-file .env -v $PWD:/app ghcr.io/shikachuu/yabl:latest php artisan ide-helper:generate -H -M -n
+    docker run --rm -it --env-file .env -v $PWD:/app ghcr.io/shikachuu/yabl:latest php artisan ide-helper:models -W -q
