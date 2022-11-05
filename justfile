@@ -5,6 +5,9 @@ alias r := run
 alias t := test
 alias l := lint
 
+default:
+    just --choose
+
 @build:
     DOCKER_BUILDKIT=1 docker build -t ghcr.io/shikachuu/yabl:latest -f infrastructure/Dockerfile .
 

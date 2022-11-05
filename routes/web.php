@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BrewController;
+use App\Http\Controllers\CoffeeController;
 use App\Http\Controllers\GeneralController;
 use App\Http\Livewire\Brewers;
 use App\Http\Livewire\Brews;
@@ -21,7 +22,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [GeneralController::class, 'index']);
 
 Route::get('/coffee', Coffees::class)->name('coffees');
-Route::get('/coffee/{id}')->name('coffee');
+Route::get('/coffee/{id}', [CoffeeController::class, 'show'])->name('coffee');
 Route::get('/brew', Brews::class)->name('brews');
 Route::get('/brew/{id}', [BrewController::class, 'show'])->name('brew');
 Route::get('/brewer', Brewers::class)->name('brewers');

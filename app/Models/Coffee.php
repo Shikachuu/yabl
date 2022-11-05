@@ -43,6 +43,10 @@ class Coffee extends Model
 {
     use HasFactory;
 
+    protected $casts = [
+        'tasting_notes' => 'array',
+    ];
+
     public function brews()
     {
         return $this->hasMany(Brew::class);
